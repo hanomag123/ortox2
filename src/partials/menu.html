@@ -1,3 +1,88 @@
 <div class="menu">
-  hello
+
+  <div class="menu__top page-container">
+
+    <div class="menu__top-header"></div>
+
+    <div class="menu__top-wrapper">
+      <div class="menu__top-phones">
+        <div class="menu__top-phone-icon">
+          <svg>
+            <use href='#phoneIcon'></use>
+          </svg>
+        </div>
+        <ul>
+          <li><a href="tel:88002228331">8 800 222 83 31</a></li>
+          <li><a href="tel:89298335338">8 929 833 53 38</a></li>
+        </ul>
+      </div>
+
+      <div class="menu__top-buttons">
+        <button class="text-red" data-modal="#callbackmodal">Экстренный прием</button>
+        <a href="https://api.whatsapp.com/send?phone=79298335338&text=" class="whatsupbutton">Записаться в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu__bot page-container" id="stickyhead">
+    <nav>
+      <ul class="menu__bot-list">
+        <li class="active">
+          <button class="menu__bot-button">Клиника</button>
+          <div class="menu__bot-sublist">
+            <ul>
+              <li><a href="#">О клинике</a></li>
+              <li><a href="#">Правовая информация</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <button class="menu__bot-button">Список услуг</button>
+          <div class="menu__bot-sublist">
+            <ul>
+              <li><a href="#">Диагностика</a></li>
+              <li><a href="#">Массаж-ЛФК</a></li>
+              <li><a href="#">Консультации специалистов</a></li>
+              <li><a href="#">Врачебные манипуляции</a></li>
+              <li><a href="#">Физиотерапия</a></li>
+              <li><a href="#">Изготовление стелек</a></li>
+              <li><a href="#">Хирургические операции</a></li>
+              <li><a href="#">Рентген</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <a href="#">Специалисты</a>
+        </li>
+
+        <li>
+          <a href="#">Результаты лечения</a>
+        </li>
+
+        <li>
+          <a href="#">Статьи</a>
+        </li>
+
+        <li>
+          <a href="#">Цены</a>
+        </li>
+
+        <li>
+          <a href="#">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="search-form-wrapper">
+      <form class="search-form">
+        <input type="search" name="search" class="search-input" placeholder="Поиск услуги..">
+        <button type="submit" class="search-button"><svg>
+            <use href='#searchIcon'></use>
+          </svg></button>
+      </form>
+    </div>
+  </div>
+
 </div>

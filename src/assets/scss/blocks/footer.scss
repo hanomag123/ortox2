@@ -1,0 +1,262 @@
+.footer {
+  background-color: #F9FFFF;
+
+  padding-top: 6.2rem;
+  padding-right: 53.3rem;
+  padding-bottom: 3rem;
+  padding-left: 30rem;
+  display: grid;
+  grid-template-columns: 18rem 22.2rem 28rem 1fr;
+  @include breakpoint($cos-bp) {
+    padding-left: 3rem;
+    padding-right: 8.5rem;
+  }
+  @include breakpoint($xl-bp) {
+    position: relative;
+    padding-top: 11.5rem;
+    grid-template-columns: 12rem 28rem 1fr;
+    padding-left: 0;
+    padding-right: 3.5rem;
+  }
+  @include breakpoint($sm-bp) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.9rem;
+    padding-right: 2.9rem;
+    padding-top: 10rem;
+  }
+  a {
+    transition: color .3s;
+    &:hover {
+      color: var(--green);
+    }
+  }
+}
+
+.footer__logo {
+  @include breakpoint($sm-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer__menu {
+  @include breakpoint($xl-bp) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 155, 151, 0.2);
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    z-index: 1;
+  }
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
+  .menu__bot-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.9rem;
+    line-height: 2.2rem;
+    width: 16rem;
+    @include breakpoint($xl-bp) {
+      flex-direction: row;
+      font-size: 1.4rem;
+      line-height: 4.6rem;
+      width: 100%;
+      min-height: unset;
+      gap: 2.7rem;
+      font-weight: 500;
+    }
+    button {
+      @include breakpoint($xl-bp) {
+        font-weight: 500;
+      }
+    }
+    &>li {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      @include breakpoint($xl-bp) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      &:hover {
+        .menu__bot-button {
+          &::after {
+            transform: rotate(0);
+          }
+
+        }
+      }
+      &.active {
+        & > button, 
+        & > a {
+          font-weight: 400;
+          @include breakpoint($xl-bp) {
+            font-weight: 500;
+          }
+        }
+      }
+      &.open {
+        .menu__bot-sublist {
+          max-height: 100vh;
+          @include breakpoint($xl-bp) {
+            max-height: unset;
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+        .menu__bot-button::after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .menu__bot-sublist {
+    position: static;
+    opacity: 1;
+    pointer-events: all;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s;
+    width: auto;
+    @include breakpoint($xl-bp) {
+      position: absolute;
+      top: 100%;
+      background-color: #C7EBEA;
+      width: 20rem;
+      max-height: unset;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      left: -2rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding-bottom: 0;
+      @include breakpoint($xl-bp) {
+        gap: 1.5;
+        padding-bottom: 1.5rem;
+      }
+      li {
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .footer-nav-title {
+    @include breakpoint($xl-bp) {
+      display: none;
+    }
+  }
+}
+
+.footer-nav-title {
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-bottom: 1.2rem;
+  @include breakpoint($xl-bp) {
+    margin-bottom: 2.2rem;
+  }
+  @include breakpoint($sm-bp) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.footer-contacts,
+.footer-services {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.footer-services {
+  @include breakpoint($sm-bp) {
+    margin-top: 6rem;
+  }
+  nav {
+    display: flex;
+    column-gap: 3rem;
+    @include breakpoint($sm-bp) {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.9rem;
+    @include breakpoint($sm-bp) {
+      gap: 3rem;
+    }
+  }
+}
+
+.footer-contacts {
+  width: 31rem;
+  margin-left: auto;
+  @include breakpoint($sm-bp) {
+    width: auto;
+    margin-left: 0;
+    margin-top: 5.5rem;
+  }
+}
+.footer-contacts-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+  @include breakpoint($sm-bp) {
+    gap: 2.7rem;
+  }
+
+  a {
+    @include breakpoint($sm-bp) {
+      color: #467B98;
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-phones {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  @include breakpoint($sm-bp) {
+    a {
+      color: var(--black);
+      text-decoration: none;
+    }
+  }
+}
+
+.footer-bot {
+  margin-top: 4rem;
+  grid-column: 1 / -1;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  text-decoration-line: underline;
+  
+  color: rgba(0, 155, 151, 0.5);
+  padding-left: 18rem;
+  @include breakpoint($sm-bp) {
+    margin-top: 6rem;
+  }
+  a {
+    color: rgba(0, 155, 151, 0.5);
+  }
+
+  @include breakpoint($xl-bp) {
+    padding-left: 2rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 0;
+  }
+}

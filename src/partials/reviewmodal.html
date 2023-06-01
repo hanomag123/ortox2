@@ -1,0 +1,28 @@
+<section class="regModal modal-overlay" id="reviewModal" hidden>
+  <div class="modal-block">
+
+    <button class="close-button">
+      <svg>
+        <use href='#crossIcon'></use>
+      </svg>
+    </button>
+
+    <h2 class="page-title">Получить бесплатную консультацию</h2>
+
+    <form class="modal-form">
+      <input type="text" name="name" class="page-input --b-green" placeholder="Ваше имя*" required>
+      <input type="tel" name="tel" class="page-input --b-green" placeholder="Ваш телефон*" required>
+      <textarea name="message" class="page-input --b-green modal-textared " placeholder="Ваш отзыв *" required></textarea>
+      <div class="modal-wrapper">
+        <div class="modal-text">* Обязательные поля для заполнения</div>
+        <button type="submit" class="modal-button">Отправить</button>
+        <label class="modal-agree">
+          <input type="checkbox" required>
+          <div class="checkbox"></div>
+          Я прочитал <a href="#">Согласие на обработку персональных данных</a> и согласен с условиями
+        </label>
+      </div>
+    </form>
+
+  </div>
+</section>

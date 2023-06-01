@@ -1,11 +1,20 @@
 <header class="header">
-  {{> menu}}
 
-  <button class="menu-button myclass">
+  <a href="#" class="header__logo">
+    <picture>
+      <source media="(max-width: 1024px)" srcset="./assets/images/logo/logo-mob.png">
+      <img src="./assets/images/logo/logo.png" alt="logo">
+    </picture>
+  </a>
+
+  <button class="menu-button">
     <span class="burger-button-close">
       <span id="first-line-burger"></span>
       <span id="second-line-burger"></span>
       <span id="third-line-burger"></span>
-  </span>
+    </span>
   </button>
+
+  {{> menu}}
+
 </header>

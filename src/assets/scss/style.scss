@@ -7,16 +7,35 @@
 @import "vars";
 @import "mixins";
 @import "vendor/reset";
+ 
+
+::-webkit-scrollbar-track
+{
+	border-radius: 1rem;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 0;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: var(--green);
+  border-radius: 0.2rem;
+}
 
 html {
   box-sizing: border-box;
   font-size: calc(100vw / 1920 * 10);
   @include breakpoint($cos-bp) {
-    font-size: calc(100vw / 1440 * 10);
+    font-size: calc(100vw / 1200 * 10);
   }
 
   @include breakpoint($xl-bp) {
-    font-size: calc(100vw / 768 * 10);
+    font-size: calc(100vw / 850 * 10);
   }
 
   @include breakpoint($sm-bp) {
@@ -24,16 +43,21 @@ html {
   }
 }
 
-
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: 'Montserrat';
+  font-style: normal;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-
+  color: var(--black);
+}
+button {
+  color: var(--black);
+  font-family: 'Montserrat';
 }
 
 img {
@@ -45,20 +69,41 @@ svg {
   transition: all 0.1s linear;
 }
 
-/* Vendors */
+// /* Vendors */
 
+.page-container {
+  padding-left: 36rem;
+  padding-right: 36rem;
+  @include breakpoint($cos-bp) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  @include breakpoint($sm-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.page-container-mobile {
+  @include breakpoint($xl-bp) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 
+  @include breakpoint($sm-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 
-/* Blocks */
+// /* Blocks */
 
 @import './blocks/menu.scss';
 @import './blocks/swiper.scss';
-@import './blocks/main.scss';
 @import './blocks/header.scss';
 @import './blocks/footer.scss';
 
 
-
+@import './blocks/main.scss';
 
 .hide {
   display: none;
@@ -66,23 +111,6 @@ svg {
 
 .show {
   display: block;
-}
-
-.container {
-  padding-right: 4rem;
-  padding-left: 4rem;
-  @include breakpoint($cos-bp) {
-    padding-right: 5rem;
-    padding-left: 5rem;
-  }
-  @include breakpoint($xl-bp) {
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
-  @include breakpoint($sm-bp) {
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
-  }
 }
 
 .img-contain {

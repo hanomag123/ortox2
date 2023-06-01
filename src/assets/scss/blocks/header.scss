@@ -1,16 +1,141 @@
 .header {
-  position: fixed;
   width: 100%;
-  transition: transform .3s;
-  will-change: transform;
-  top: 0;
-  left: 0;
-  z-index: 20;
 
   @include breakpoint($xl-bp) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+    background-color: #F7F7F7;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 2.2rem;
+    padding-bottom: 2rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
-.out {
-  transform: translate3d(0, calc(-100% - 1rem), 0);
+.header__logo {
+  position: absolute;
+  top: 3.5rem;
+  left: 36rem;
+  width: 21rem;
+  height: 7rem;
+
+  @include breakpoint($cos-bp) {
+    left: 3rem;
+  }
+
+  @include breakpoint($xl-bp) {
+    width: 20rem;
+    height: 7rem;
+    position: static;
+  }
+
+  @include breakpoint($sm-bp) {
+    width: 7.6rem;
+    height: 3rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.menu-button {
+  width: 3.8rem;
+  height: 2.8rem;
+  background-color: transparent;
+  border: 0;
+
+  z-index: 11;
+  display: none;
+  position: relative;
+
+  @include breakpoint($xl-bp) {
+    display: block;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-left: 0;
+    width: 2.1rem;
+    height: 1.6rem;
+  }
+
+  .burger-button-close {
+    transition: opacity .3s;
+
+    #first-line-burger,
+    #second-line-burger,
+    #third-line-burger {
+      width: 100%;
+      height: 0.4rem;
+      border-radius: 0.1rem;
+      background: #585858;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center center;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      border-radius: 0.25rem;
+
+      @include breakpoint($sm-bp) {
+        height: 0.2rem;
+      }
+    }
+
+    #first-line-burger {
+      top: 0%;
+    }
+
+    #second-line-burger {
+      top: 48%;
+
+      @include breakpoint($sm-bp) {
+        top: 46%;
+      }
+    }
+
+    #third-line-burger {
+      top: unset;
+      bottom: 0%;
+    }
+  }
+}
+
+.header__menu-button--active,
+.menu-button--active {
+  .burger-button-close {
+    opacity: 0.3;
+
+    #first-line-burger {
+      top: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    #second-line-burger {
+      transform: translateX(0);
+      opacity: 0;
+    }
+
+    #third-line-burger {
+      top: 50%;
+      bottom: 0;
+      transform: translateX(-50%) rotate(-45deg);
+    }
+  }
 }
