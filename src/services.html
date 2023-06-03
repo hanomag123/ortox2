@@ -3,7 +3,7 @@
       <div class="services-header-block">
           <p>«Ваш первый шаг в здоровое будущее...»</p>
           <h1>
-            Услуги <br class="mobile-hidden">и стоимость
+            Услуги <br class="tablet-hidden">и стоимость
           </h1>
           <button class="page-button-light services-header-button" data-modal="#consult">
             Получить бесплатную консультацию
@@ -13,8 +13,9 @@
 
   <div class="services-header-right">
       <picture>
-        <source media="(max-width: 1440)" srcset="./assets/images/services/servicesHeader-cos.jpg">
-        <img src="./assets/images/services/servicesHeader.jpg" alt="#">
+        <source media="(max-width: 1024px)" srcset="./assets/images/services/servicesHeader-xl.jpg">
+        <source media="(max-width: 1440px)" srcset="./assets/images/services/servicesHeader-cos.jpg">
+        <img src="./assets/images/services/servicesHeader.jpg" alt="main">
       </picture>
   </div>
 </section>
@@ -27,7 +28,7 @@
 </ul>
 
 <section class="services-price mt-150 page-container">
-  <h2 class="page-title">Узнать стоимость услуги</h2>
+  <h2 class="page-title services-price-title">Узнать стоимость услуги</h2>
   <form action="#" class="services-price-search">
       <input type="search" name="search" placeholder="Быстрый поиск">
       <button type="submit">

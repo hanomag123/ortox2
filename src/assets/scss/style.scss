@@ -55,6 +55,11 @@ html {
 body {
   color: var(--black);
 }
+
+.bg-grey {
+  background-color: #F5F5F5;
+}
+
 button {
   color: var(--black);
   font-family: 'Montserrat';
@@ -103,6 +108,7 @@ svg {
 @import './blocks/footer.scss';
 @import './blocks/main.scss';
 @import './blocks/servises.scss';
+@import './blocks/results.scss';
 
 .hide {
   display: none;
