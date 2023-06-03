@@ -100,6 +100,14 @@ svg {
   }
 }
 
+.newPagesMargin {
+  margin-top: 10rem;
+
+  @include breakpoint($sm-bp) {
+    margin-top: 0rem;
+  }
+}
+
 // /* Blocks */
 
 @import './blocks/menu.scss';
@@ -114,6 +122,8 @@ svg {
 @import './blocks/servicesSecond.scss';
 @import './blocks/servicesThird.scss';
 @import './blocks/aboutClinic.scss';
+@import './blocks/legalInformation.scss';
+@import './blocks/contacts.scss';
 
 
 .hide {
