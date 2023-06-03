@@ -1,0 +1,211 @@
+.page-text-margin {
+    margin-top: 10rem;
+  
+    @include breakpoint($xl-bp) {
+      margin-top: 7rem;
+    }
+  }
+  
+  .page-text {
+    h3+p {
+      margin-top: 0;
+    }
+  
+    p {
+      margin-bottom: 3rem;
+    }
+  
+    h3 {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      font-size: 2.3rem;
+      line-height: 2.9rem;
+      color: #000000;
+
+      @include breakpoint($sm-bp) {
+        font-size: 1.7rem;
+        line-height: 2rem;
+      }
+
+    }
+  
+    ul,
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 2.9rem;
+      color: #000000;
+  
+      @include breakpoint($sm-bp) {
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+      }
+    }
+  
+    ul {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+  
+      li {
+        padding-left: 3rem;
+        position: relative;
+  
+        &::before {
+          content: "•";
+          margin-left: 1rem;
+          margin-right: 1rem;
+          display: inline-block;
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+  
+  .services-block-margin {
+    margin-top: 15rem;
+  
+    @include breakpoint($cos-bp) {
+      margin-top: 10rem;
+    }
+  
+    @include breakpoint($xl-bp) {
+      margin-top: 7rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      margin-top: 5rem;
+    }
+  }
+  
+  .breadcrumbs-margin {
+    margin-top: 10rem;
+  
+    @include breakpoint($xl-bp) {
+      margin-top: 10rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      margin-top: 8rem;
+    }
+  }
+  
+  .services3-content {
+    .page-title {
+      text-align: start;
+      width: 101%;
+  
+      @include breakpoint($xl-bp) {
+        width: 100%;
+      }
+    }
+  }
+  
+  .services3-list {
+    margin-top: 6rem;
+    width: 100%;
+  
+    @include breakpoint($xl-bp) {
+      margin-top: 4rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      margin-top: 2rem;
+    }
+  }
+  
+  .services3-list-item {
+    background-color: var(--white);
+    border: 0.1rem solid var(--lgrey);
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.72rem;
+    line-height: 2rem;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.6rem;
+    padding: 2.4rem 3rem;
+  
+    border-radius: 1rem;
+
+    @include breakpoint($xl-bp) {
+        font-size: 1.4rem;
+        line-height: 5.3rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  
+    div {
+
+        &:first-child {
+            @include breakpoint($sm-bp) {
+              width: 80%;
+            }
+          }
+
+      &:last-child {
+        @include breakpoint($sm-bp) {
+          font-size: 1.4rem;
+          width: 20%;
+        }
+      }
+    }
+  }
+  
+  .body-bg-grey {
+    background-color: #F5F5F5 !important;
+  }
+  
+  .services3-list-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    @include breakpoint($sm-bp) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  .services3-button {
+    margin-top: 6rem;
+
+    @include breakpoint($xl-bp) {
+        margin-top: 4rem;
+    }
+  
+    @include breakpoint($sm-bp) {
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  .services3-content {
+    
+    h2 {
+
+        line-height: 4rem;
+        @include breakpoint($xl-bp) {
+            line-height: 5rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            font-size: 2.2rem;
+            line-height: 3rem;
+        }
+    }
+  }
