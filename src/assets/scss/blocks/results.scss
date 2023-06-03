@@ -1,10 +1,17 @@
 .resultsOfTreatment {
-  margin-top: 8rem;
+  margin-top: 7.5rem;
 }
 
 .resultsOfTreatment-content {
   margin-bottom: 3rem;
-
+  @include breakpoint($sm-bp) {
+    margin-bottom: 2rem;
+  }
+  .page-title {
+    @include breakpoint($sm-bp) {
+      font-size: 2.2rem;
+    }
+  }
   .resultsOfTreatment-content__selectContainer {
     display: flex;
     gap: 5rem;
@@ -12,86 +19,15 @@
 
     @include breakpoint($sm-bp) {
       flex-direction: column;
+      margin-top: 2rem;
+      gap: 2rem;
     }
 
     .custom-select {
-      position: relative;
-      width: 26%;
-      height: 4.5rem;
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 2.3rem;
-      color: rgba(0, 56, 55, 0.5);
-      background: #FFFFFF;
-      border: 0.1rem solid #009B97;
-      backdrop-filter: blur(0.46rem);
-      border-radius: 0.5rem;
-
+      width: 32rem;
       @include breakpoint($sm-bp) {
         width: 100%;
       }
-    }
-
-    .select-input {
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1rem;
-      border: 0.1rem solid #ccc;
-      cursor: pointer;
-    }
-
-    .selected-option {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .arrow {
-      border: solid #003837;
-      border-width: 0 0.1rem 0.1rem 0;
-      display: inline-block;
-      padding: 0.4rem;
-      transform: rotate(45deg);
-      opacity: 0.5;
-    }
-
-    .arrow.active {
-      transform: rotate(-135deg);
-    }
-
-    .options-container {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      max-height: fit-content;
-      overflow-y: auto;
-      z-index: 1;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      border: 0.1rem solid #ccc;
-      background-color: #fff;
-      box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
-      display: none;
-    }
-
-    .options-container.active {
-      display: block;
-    }
-
-    .option {
-      padding: 1rem;
-      cursor: pointer;
-    }
-
-    .option:hover {
-      background-color: #f2f2f2;
     }
   }
 }
@@ -103,7 +39,7 @@
   gap: 2rem;
 
   @include breakpoint($sm-bp) {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
 
@@ -118,7 +54,9 @@
     font-size: 1.6rem;
     line-height: 2.3rem;
     color: #003837;
-
+    @include breakpoint($sm-bp) {
+      padding-left: 2rem;
+    }
   }
 
   .radio-container input {
@@ -132,8 +70,8 @@
     left: 0;
     top: 50%;
     transform: translate(0, -50%);
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.2rem;
+    width: 1.2rem;
     background-color: #FFFFFF;
     border-radius: 50%;
     border: 0.1rem solid #5E8F8F;
@@ -183,20 +121,29 @@
 }
 
 .resultsOfTreatment-accordeon {
+  .accordion.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
   .accordion {
     background-color: #FFFFFF;
     color: #444;
     cursor: pointer;
-    padding: 1.8rem;
+    padding: 2.8rem 3rem;
     width: 100%;
     text-align: left;
     border: none;
     outline: none;
     transition: 0.4s;
-
+    position: relative;
+    border-radius: 1rem;
     @include breakpoint($sm-bp) {
       display: flex;
       flex-direction: column;
+      padding: 2.4rem 2rem;
     }
 
     span {
@@ -206,9 +153,31 @@
       font-size: 1.8rem;
       line-height: 2.3rem;
       color: #003837;
-
+      @include breakpoint($sm-bp) {
+        font-size: 1.4rem;
+      }
       .bold {
         font-weight: 700;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      transform: translateY(-50%);
+      right: 3rem;
+      width: 2rem;
+      height: 2rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.24712 7.73006L10.6106 3.48406C10.6458 3.4491 10.6875 3.42146 10.7334 3.40274C10.7794 3.38403 10.8285 3.3746 10.8781 3.37501C10.9277 3.37542 10.9767 3.38567 11.0223 3.40514C11.0679 3.42462 11.1092 3.45295 11.1438 3.48848C11.1783 3.52402 11.2055 3.56606 11.2238 3.61218C11.242 3.65829 11.2509 3.70756 11.2499 3.75714C11.249 3.80671 11.2382 3.85561 11.2183 3.901C11.1983 3.94638 11.1695 3.98736 11.1336 4.02156L6.50862 8.52156C6.43861 8.58967 6.34479 8.62777 6.24712 8.62777C6.14944 8.62777 6.05562 8.58967 5.98562 8.52156L1.36062 4.02156C1.32471 3.98736 1.29594 3.94638 1.27598 3.901C1.25601 3.85561 1.24524 3.80671 1.2443 3.75714C1.24336 3.70756 1.25225 3.65829 1.27048 3.61218C1.2887 3.56606 1.31589 3.52402 1.35047 3.48848C1.38505 3.45295 1.42633 3.42462 1.47193 3.40514C1.51753 3.38567 1.56653 3.37542 1.61612 3.37501C1.6657 3.3746 1.71487 3.38403 1.76079 3.40274C1.8067 3.42146 1.84845 3.4491 1.88362 3.48406L6.24712 7.73006Z' fill='%231A1C19'/%3E%3C/svg%3E%0A");
+      transition: transform .3s;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      opacity: 0.3;
+      @include breakpoint($sm-bp) {
+        width: 1.5rem;
+        height: 1.5rem;
+        right: 2rem;
       }
     }
   }
@@ -227,7 +196,12 @@
 
     .results-block {
       padding-top: 7rem;
-
+      @include breakpoint($sm-bp) {
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+        padding-right: 0.7rem;
+        padding-left: 0.7rem;
+      }
       .results-list {
         margin-top: 0rem;
       }
@@ -238,4 +212,101 @@
 .resultsOfTreatment-btnContainer {
   display: flex;
   justify-content: center;
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  min-width: 15rem;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  border: 0.1rem solid var(--green);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.24712 7.73006L10.6106 3.48406C10.6458 3.4491 10.6875 3.42146 10.7334 3.40274C10.7794 3.38403 10.8285 3.3746 10.8781 3.37501C10.9277 3.37542 10.9767 3.38567 11.0223 3.40514C11.0679 3.42462 11.1092 3.45295 11.1438 3.48848C11.1783 3.52402 11.2055 3.56606 11.2238 3.61218C11.242 3.65829 11.2509 3.70756 11.2499 3.75714C11.249 3.80671 11.2382 3.85561 11.2183 3.901C11.1983 3.94638 11.1695 3.98736 11.1336 4.02156L6.50862 8.52156C6.43861 8.58967 6.34479 8.62777 6.24712 8.62777C6.14944 8.62777 6.05562 8.58967 5.98562 8.52156L1.36062 4.02156C1.32471 3.98736 1.29594 3.94638 1.27598 3.901C1.25601 3.85561 1.24524 3.80671 1.2443 3.75714C1.24336 3.70756 1.25225 3.65829 1.27048 3.61218C1.2887 3.56606 1.31589 3.52402 1.35047 3.48848C1.38505 3.45295 1.42633 3.42462 1.47193 3.40514C1.51753 3.38567 1.56653 3.37542 1.61612 3.37501C1.6657 3.3746 1.71487 3.38403 1.76079 3.40274C1.8067 3.42146 1.84845 3.4491 1.88362 3.48406L6.24712 7.73006Z' fill='%231A1C19'/%3E%3C/svg%3E%0A");
+  transition: transform .3s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.5;
+  @include breakpoint($sm-bp) {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  // border-color: transparent transparent #fff transparent;
+  transform: translateY(-50%) rotate(180deg);
+}
+.select-arrow-active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: transparent;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: rgba(0, 56, 55, 0.5);
+  font-size: 1.4rem;
+  line-height: 140%;
+  padding: 1.5rem 1.6rem;
+  // border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+    padding: 1.1rem 1.6rem;
+  }
+
+}
+.select-selected {
+  padding-right: 3.5rem;
+}
+.select-items > div {
+  color: rgba(0, 56, 55, 0.5);
+  padding: 1rem 1.2rem;
+}
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--white);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0px 0.5rem 1rem rgba(19, 33, 42, 0.15);
+  border: 0.1rem solid var(--green);
+  border-top: 0;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: var(--lgreen);
+}
+.select-selected--active {
+  color: var(--black);
 }
