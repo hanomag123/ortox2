@@ -12,7 +12,10 @@
   </div>
 
   <div class="services-header-right">
-      <img src="./assets/images/services/servicesHeader.jpg" alt="#">
+      <picture>
+        <source media="(max-width: 1440)" srcset="./assets/images/services/servicesHeader-cos.jpg">
+        <img src="./assets/images/services/servicesHeader.jpg" alt="#">
+      </picture>
   </div>
 </section>
 
@@ -141,7 +144,7 @@
       </li>
 
       <li class="services-price__item">
-          <button>
+          <a href="#">
               <svg class="services-price__img">
                   <use href="#service6"></use>
               </svg>
@@ -151,7 +154,7 @@
                       <use href="#footerArrow"></use>
                   </svg>
               </span>
-          </button>
+          </a>
           <ul>
               <li><a href="#">3D безлучевая диагностика позвоночника</a></li>
               <li><a href="#">Рентген</a></li>

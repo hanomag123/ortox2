@@ -43,7 +43,9 @@
   grid-template-columns: 44.5% 1fr;
   align-items: center;
   width: 100%;
-
+  @include breakpoint($cos-bp) {
+    grid-template-columns: 45.5% 1fr;
+  }
   @include breakpoint($xl-bp) {
     flex-direction: column-reverse;
     gap: 7rem;
@@ -62,6 +64,7 @@
     .services-header-block {
       padding-left: 19.5rem;
       @include breakpoint($cos-bp) {
+        padding-left: 5.6rem;
       }
 
       @include breakpoint($xl-bp) {
@@ -230,7 +233,15 @@
       @include breakpoint($sm-bp) {
         width: 100%;
       }
-
+      & > a {
+        .services-price__arrow {
+          display: none;
+        }
+        & + ul {
+          display: none;
+        }
+      }
+      & > a,
       button {
         padding: 0rem;
         background: rgba(251, 251, 251, 0.63);
@@ -239,15 +250,20 @@
         border-radius: 1.85rem;
         padding: 2rem 2.7rem;
         display: flex;
+        align-items: center;
         gap: 1.5rem;
+        min-height: 11.3rem;
+        width: 100%;
+        padding-left: 4.5rem;
+        transition: all 0.3s;
 
         .services-price__img {
-          width: 9rem;
-          height: 6rem;
+          width: 5.2rem;
+          height: 5.2rem;
           object-fit: contain;
           fill: #009B97;
-          stroke: #009B97;
           transition: all .25s;
+          flex: 0 0 auto;
         }
 
         .services-price__btnTitle {
@@ -257,6 +273,7 @@
           font-size: 1.5rem;
           line-height: 2.3rem;
           color: #003837;
+          transition: color .3s;
         }
 
         .services-price__arrow {
@@ -264,7 +281,7 @@
           width: 1rem;
           height: 1rem;
           stroke: #003837;
-          transition: all .25s;
+          transition: all .3s;
         }
       }
 
@@ -282,7 +299,7 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        top: 8.7rem;
+        top: 100%;
         z-index: 11;
 
         li {
@@ -296,11 +313,27 @@
       }
 
       &:hover {
+        & > a,
+        button {
+          background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
+          color: var(--white);
+        }
+        .services-price__btnTitle {
+          color: var(--white);
+        }
+        .services-price__arrow {
+          stroke: var(--white);
+        }
+        .services-price__img {
+          fill: var(--white);
+        }
+      }
+
+      &.open {
 
         .services-price__img {
-          stroke: #FFFFFF;
           fill: #FFFFFF;
-          transition: all .25s;
+          transition: all .3s;
         }
 
 
@@ -308,16 +341,20 @@
         .services-price__arrow {
           transform: rotate(180deg);
           stroke: #CFFFFE;
-          transition: all .25s;
+          transition: all .3s;
         }
 
         .services-price__btnTitle {
           color: #CFFFFE;
         }
-
+        & > a,
         button {
           background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
-          transition: all 0.35s linear;
+        }
+
+        button {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
 
         ul {

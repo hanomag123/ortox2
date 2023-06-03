@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  const menuButtons = document.querySelectorAll('.menu__bot-list > li');
+  const menuButtons = document.querySelectorAll('.menu__bot-list > li, .services-price__item');
 
   function removeOpen() {
     if (!event.target.closest('.open')) {
