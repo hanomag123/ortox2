@@ -1815,6 +1815,11 @@ textarea.modal-textared {
     display: none;
   }
 }
+.tablet-hidden {
+  @include breakpoint($xl-bp) {
+    display: none;
+  }
+}
 .desctop-hidden {
   display: none;
   @include breakpoint($sm-bp) {

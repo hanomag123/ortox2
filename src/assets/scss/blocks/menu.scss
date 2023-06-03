@@ -62,10 +62,10 @@
   @include breakpoint($xl-bp) {
     gap: 1.5rem;
     align-items: flex-start;
+    width: 100%;
   }
   @include breakpoint($sm-bp) {
     gap: 2rem;
-    width: 100%;
   }
 }
 

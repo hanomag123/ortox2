@@ -1,0 +1,241 @@
+.resultsOfTreatment {
+  margin-top: 8rem;
+}
+
+.resultsOfTreatment-content {
+  margin-bottom: 3rem;
+
+  .resultsOfTreatment-content__selectContainer {
+    display: flex;
+    gap: 5rem;
+    margin-top: 5rem;
+
+    @include breakpoint($sm-bp) {
+      flex-direction: column;
+    }
+
+    .custom-select {
+      position: relative;
+      width: 26%;
+      height: 4.5rem;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 2.3rem;
+      color: rgba(0, 56, 55, 0.5);
+      background: #FFFFFF;
+      border: 0.1rem solid #009B97;
+      backdrop-filter: blur(0.46rem);
+      border-radius: 0.5rem;
+
+      @include breakpoint($sm-bp) {
+        width: 100%;
+      }
+    }
+
+    .select-input {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      border: 0.1rem solid #ccc;
+      cursor: pointer;
+    }
+
+    .selected-option {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .arrow {
+      border: solid #003837;
+      border-width: 0 0.1rem 0.1rem 0;
+      display: inline-block;
+      padding: 0.4rem;
+      transform: rotate(45deg);
+      opacity: 0.5;
+    }
+
+    .arrow.active {
+      transform: rotate(-135deg);
+    }
+
+    .options-container {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      max-height: fit-content;
+      overflow-y: auto;
+      z-index: 1;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border: 0.1rem solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .options-container.active {
+      display: block;
+    }
+
+    .option {
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+.resultsOfTreatment-content__checkboxContainer {
+
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @include breakpoint($sm-bp) {
+    gap: 1rem;
+  }
+
+
+  .radio-container {
+    display: block;
+    position: relative;
+    padding-left: 2.2rem;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    color: #003837;
+
+  }
+
+  .radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 0.1rem solid #5E8F8F;
+  }
+
+  .radio-container:hover input~.checkmark {
+    background: #FFFFFF;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .radio-container input:checked~.checkmark:after {
+    display: block;
+  }
+
+  .radio-container .checkmark:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: #5E8F8F;
+  }
+
+  p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    color: #003837;
+  }
+
+  label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    color: #003837;
+  }
+}
+
+.resultsOfTreatment-accordeon {
+  .accordion {
+    background-color: #FFFFFF;
+    color: #444;
+    cursor: pointer;
+    padding: 1.8rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+
+    @include breakpoint($sm-bp) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 2.3rem;
+      color: #003837;
+
+      .bold {
+        font-weight: 700;
+      }
+    }
+  }
+
+  // .active, .accordion:hover {
+  //   background-color: #ccc;
+  // }
+
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 2rem;
+    background: #FFFFFF;
+    margin-bottom: 2rem;
+
+    .results-block {
+      padding-top: 7rem;
+
+      .results-list {
+        margin-top: 0rem;
+      }
+    }
+  }
+}
+
+.resultsOfTreatment-btnContainer {
+  display: flex;
+  justify-content: center;
+}
