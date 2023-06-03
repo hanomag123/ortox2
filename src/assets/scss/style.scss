@@ -107,9 +107,10 @@ svg {
 
 .newPagesMargin {
   margin-top: 10rem;
-
-  @include breakpoint($sm-bp) {
-    margin-top: 0rem;
+  &:last-child {
+    @include breakpoint($sm-bp) {
+      margin-top: 0rem;
+    }
   }
 }
 
@@ -125,6 +126,8 @@ svg {
 @import './blocks/results.scss';
 @import './blocks/specialists.scss';
 @import './blocks/specialist.scss';
+@import './blocks/fancybox.scss';
+@import './blocks/cases.scss';
 
 @import './blocks/servicesSecond.scss';
 @import './blocks/servicesThird.scss';
