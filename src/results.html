@@ -18,27 +18,21 @@ title: страницы
 
     <div class="resultsOfTreatment-content__selectContainer">
       <div class="custom-select">
-        <div class="select-input">
-          <span class="selected-option">Select an option</span>
-          <i class="arrow"></i>
-        </div>
-        <ul class="options-container">
-          <li class="option">Option 1</li>
-          <li class="option">Option 2</li>
-          <li class="option">Option 3</li>
-          <li class="option">Option 4</li>
-          <li class="option">Option 5</li>
-        </ul>
+        <select name="diagnosis">
+          <option value="none">Диагноз</option>
+          <option value="Диагноз 1">Диагноз 1</option>
+          <option value="Диагноз 2">Диагноз 2</option>
+        </select>
       </div>
 
       <div class="resultsOfTreatment-content__checkboxContainer">
         <p>Возраст</p>
-        <label class="radio-container">До 20 лет
+        <label class="radio-container">до 20 лет
           <input type="radio" name="radio" checked="checked">
           <span class="checkmark"></span>
         </label>
 
-        <label class="radio-container">После 20 лет
+        <label class="radio-container">после 20 лет
           <input type="radio" name="radio">
           <span class="checkmark"></span>
         </label>
@@ -116,22 +110,49 @@ title: страницы
       </span>
     </button>
     <div class="panel">
-      <p>Lorem ipsum...</p>
-    </div>
+      <div class="results-block">
+        <ul class="results-list">
+          <li class="results-item">
+            <h4 class="results-subtitle">Первичный прием</h4>
 
-    <button class="accordion">
-      <span>
-        Возраст: <span class="bold">26</span>
-      </span>
-      <span>
-        Диагноз: <span class="bold">Сколеоз</span>
-      </span>
-      <span>
-        Срок лечения: <span class="bold">5,5 месяцев</span>
-      </span>
-    </button>
-    <div class="panel">
-      <p>Lorem ipsum...</p>
+            <div class="results-img">
+              <img src="./assets/images/results/results-1.jpg" alt="results">
+            </div>
+
+            <h4 class="results-subtitle --bot">Искривление 35°</h4>
+
+            <div class="results-img --bot">
+              <img src="./assets/images/results/results-1.png" alt="results">
+            </div>
+          </li>
+          <li class="results-item">
+            <h4 class="results-subtitle">Лечение 2 месяца</h4>
+
+            <div class="results-img">
+              <img src="./assets/images/results/results-2.jpg" alt="results">
+            </div>
+
+            <h4 class="results-subtitle --bot">Искривление 19°</h4>
+
+            <div class="results-img --bot">
+              <img src="./assets/images/results/results-2.png" alt="results">
+            </div>
+          </li>
+          <li class="results-item">
+            <h4 class="results-subtitle">Результат 5,5 месяцев</h4>
+
+            <div class="results-img">
+              <img src="./assets/images/results/results-3.jpg" alt="results">
+            </div>
+
+            <h4 class="results-subtitle --bot">Искривление 0°</h4>
+
+            <div class="results-img --bot">
+              <img src="./assets/images/results/results-3.png" alt="results">
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 

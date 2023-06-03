@@ -58,6 +58,11 @@ body {
 
 .bg-grey {
   background-color: #F5F5F5;
+  .header {
+    @include breakpoint($xl-bp) {
+      background-color: var(--white);
+    }
+  }
 }
 
 button {
@@ -116,8 +121,10 @@ svg {
 @import './blocks/footer.scss';
 @import './blocks/main.scss';
 @import './blocks/servises.scss';
-
+@import './blocks/prices.scss';
 @import './blocks/results.scss';
+@import './blocks/specialists.scss';
+@import './blocks/specialist.scss';
 
 @import './blocks/servicesSecond.scss';
 @import './blocks/servicesThird.scss';
