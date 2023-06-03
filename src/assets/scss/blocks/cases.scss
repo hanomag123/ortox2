@@ -1,0 +1,44 @@
+.cases-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  row-gap: 6rem;
+  @include breakpoint($xl-bp) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+.cases-item {
+  line-height: 1.5;
+  font-size: 1.6rem;
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include breakpoint($sm-bp) {
+      gap: 1rem;
+    }
+    & > * {
+      display: block;
+    }
+  }
+
+}
+.cases-img {
+  height: 33rem;
+  border-radius: 1rem;
+}
+
+.cases-title {
+  font-size: 2.2rem;
+  color: var(--green);
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+  }
+}
+.cases-date {
+
+}
+.cases-desc {
+}

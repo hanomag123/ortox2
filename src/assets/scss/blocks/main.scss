@@ -8,6 +8,7 @@
     font-size: 5rem;
     line-height: 5.4rem;
   }
+
   @include breakpoint($xl-bp) {
     font-size: 5.8rem;
     line-height: 5.9rem;
@@ -61,6 +62,7 @@ main {
     background-color: #F7F7F7;
     padding-bottom: 8.5rem;
   }
+
   @include breakpoint($sm-bp) {
     padding-bottom: 4.5rem;
   }
@@ -102,10 +104,12 @@ main {
     margin-top: 1rem;
     max-width: 55.5rem;
   }
+
   @include breakpoint($xl-bp) {
     max-width: unset;
     margin-top: 2.2rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 0.5rem;
     font-size: 2.5rem;
@@ -115,12 +119,14 @@ main {
 
 .main-button {
   margin-top: 2rem;
+
   @include breakpoint($xl-bp) {
     margin-top: 3rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 1.5rem;
-    width: 100%; 
+    width: 100%;
   }
 }
 
@@ -140,10 +146,12 @@ main {
   color: var(--black);
   display: inline-block;
   transition: all .3s;
+
   &:hover {
     background-color: var(--green);
     color: var(--white);
   }
+
   @include breakpoint($xl-bp) {
     border: 0.1rem solid #009B97;
     color: #009B97;
@@ -151,6 +159,7 @@ main {
     padding: 1.5rem 2.5rem;
     background-color: transparent;
   }
+
   @include breakpoint($sm-bp) {
     font-size: 1.5rem;
     line-height: 3rem;
@@ -172,10 +181,12 @@ main {
   display: inline-block;
   border: 0.1rem solid var(--green);
   transition: all .3s;
+
   @include breakpoint($sm-bp) {
     font-size: 1.8rem;
     line-height: 3rem;
   }
+
   &:hover {
     color: var(--white);
     background-color: var(--green);
@@ -234,6 +245,7 @@ main {
   @include breakpoint($xl-bp) {
     margin-top: 10rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 7rem;
   }
@@ -246,6 +258,7 @@ main {
     display: block;
     margin-bottom: 5rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-bottom: 2rem;
     font-size: 2.2rem;
@@ -258,6 +271,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
   @include breakpoint($sm-bp) {
     row-gap: 1.2rem;
   }
@@ -271,12 +285,15 @@ main {
   backdrop-filter: blur(0.5rem);
   transform: translate3d(0, 0, 0);
   transition: background-color .3s;
+
   &:hover {
     background-color: transparent;
   }
+
   @include breakpoint($cos-bp) {
     width: 13rem;
   }
+
   @include breakpoint($xl-bp) {
     width: 18.6rem;
   }
@@ -293,9 +310,11 @@ main {
     min-height: 18rem;
     gap: 2rem;
     white-space: normal;
+
     @include breakpoint($xl-bp) {
       min-height: 23.6rem;
     }
+
     @include breakpoint($sm-bp) {
       min-height: 19.6rem;
     }
@@ -306,13 +325,16 @@ main {
   width: 8.1rem;
   height: 6.4rem;
   margin-top: 2.5rem;
+
   @include breakpoint($xl-bp) {
     margin-top: 4.5rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 3.5rem;
     height: 4.7rem;
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -335,6 +357,7 @@ main {
   @include breakpoint($cos-bp) {
     font-size: 1.4rem;
   }
+
   @include breakpoint($xl-bp) {
     font-size: 1.8rem;
     line-height: 3.1rem;
@@ -352,6 +375,7 @@ main {
   @include breakpoint($xl-bp) {
     margin-top: 10rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 7rem;
   }
@@ -359,117 +383,13 @@ main {
 
 .mt-70 {
   margin-top: 7rem;
-  
+
   @include breakpoint($sm-bp) {
     margin-top: 3rem;
   }
 }
 
-.actions__swiper-wrapper {
-  position: relative;
 
-  .arrow-button {
-    position: absolute;
-    top: 47.5%;
-    z-index: 2;
-  }
-
-  .next {
-    right: 29rem;
-
-    @include breakpoint($cos-bp) {
-      right: 3rem;
-    }
-  }
-
-  .prev {
-    left: 29rem;
-
-    @include breakpoint($cos-bp) {
-      left: 3rem;
-    }
-  }
-
-  .swiper-pagination {
-    position: static;
-    margin-top: 4.5rem;
-
-    @include breakpoint($cos-bp) {
-      margin-top: 3.5rem;
-    }
-  }
-}
-
-.actions__swiper {
-  @include breakpoint($cos-bp) {
-    padding-left: 9rem;
-    padding-right: 9rem;
-  }
-
-  .swiper-slide {
-    margin-right: 36rem;
-    background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
-    border-radius: 7rem;
-    position: relative;
-
-    display: flex;
-    justify-content: flex-end;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      width: 76rem;
-      height: 76rem;
-      background: radial-gradient(50% 50% at 50% 50%, #00DBD5 0%, rgba(0, 219, 213, 0) 100%);
-      position: absolute;
-      top: 3.8rem;
-      left: 2.3rem;
-    }
-  }
-}
-
-.actions-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.actions-block {
-  width: 50%;
-  padding-top: 13rem;
-  padding-bottom: 15rem;
-  padding-right: 8rem;
-  position: relative;
-  z-index: 1;
-
-  @include breakpoint($cos-bp) {
-    padding-right: 7rem;
-    padding-bottom: 13rem;
-  }
-}
-
-.actions-text {
-  margin-top: 2rem;
-
-}
-
-.actions-button {
-  margin-top: 4.8rem;
-
-  @include breakpoint($cos-bp) {
-    margin-top: 3.8rem;
-    font-size: 1.5rem;
-    line-height: 2.6rem;
-  }
-}
 
 .arrow-button {
   border: 0;
@@ -505,29 +425,6 @@ main {
 
 .swiper-wrapper {
   will-change: transform;
-}
-
-.actions-bullet {
-  width: 1.3rem;
-  height: 1.3rem;
-  background: rgba(0, 155, 151, 0.3);
-  opacity: 1;
-  border-radius: 0.65rem;
-  transition: all .3s;
-
-  @include breakpoint($cos-bp) {
-    width: 1.1rem;
-    height: 1.1rem;
-  }
-  @include breakpoint($xl-bp) {
-    width: 1.3rem;
-    height: 1.3rem;
-  }
-
-  &.swiper-pagination-bullet-active {
-    width: 2.6rem;
-    background-color: #009B97;
-  }
 }
 
 .uppercase {
@@ -639,7 +536,7 @@ main {
     height: 46.4rem;
     margin-left: 6.6rem;
     width: 27.4rem;
-    border-top-right-radius:  7rem;
+    border-top-right-radius: 7rem;
     border-bottom-right-radius: 5rem;
   }
 
@@ -651,9 +548,11 @@ main {
     height: 100%;
     overflow: hidden;
     border-radius: inherit;
+
     @include breakpoint($sm-bp) {
       display: none;
     }
+
     &::before {
       content: '';
       position: absolute;
@@ -685,6 +584,7 @@ main {
     padding-top: 3.8rem;
     border-radius: 4.5rem;
   }
+
   @include breakpoint($sm-bp) {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -721,6 +621,7 @@ main {
     font-size: 2.1rem;
     line-height: 2.3rem;
   }
+
   @include breakpoint($sm-bp) {
     font-size: 2.8rem;
     line-height: 3.2rem;
@@ -734,6 +635,7 @@ main {
   font-size: 1.7rem;
   line-height: 2.6rem;
   color: rgba(0, 56, 55, 0.5);
+
   @include breakpoint($xl-bp) {
     font-size: 1.1rem;
     line-height: 1.6rem;
@@ -768,6 +670,7 @@ main {
     margin-top: 0.9rem;
     gap: 1rem;
   }
+
   @include breakpoint($sm-bp) {
     flex-direction: column;
     align-items: flex-start;
@@ -779,12 +682,15 @@ main {
 .signature {
   width: 12.8rem;
   height: 5.3rem;
+
   @include breakpoint($xl-bp) {
     width: 7.8rem;
   }
+
   @include breakpoint($sm-bp) {
     width: 12.8rem;
   }
+
   img {
     width: 100%;
     height: 100%;
@@ -805,6 +711,7 @@ main {
     padding-right: 0rem;
     padding-left: 0rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 3.4rem;
     padding-left: .7rem;
@@ -832,9 +739,11 @@ main {
   .swiper-pagination {
     position: static;
     margin-top: 6.7rem;
+
     @include breakpoint($xl-bp) {
       margin-top: 4.7rem;
     }
+
     @include breakpoint($sm-bp) {
       margin-top: 2.4rem;
     }
@@ -842,6 +751,7 @@ main {
 
   .swiper-slide {
     width: 34.1rem;
+
     @include breakpoint($cos-bp) {
       width: 32.5rem;
     }
@@ -852,12 +762,15 @@ main {
   width: 100%;
   height: 39.8rem;
   position: relative;
+
   @include breakpoint($xl-bp) {
     height: 33.8rem;
   }
+
   @include breakpoint($sm-bp) {
     height: 37.5rem;
   }
+
   &::before {
     content: '';
     width: 100%;
@@ -867,10 +780,12 @@ main {
     left: 0;
     background: linear-gradient(180deg, #00CEC9 0%, #00A49F 100%);
     border-radius: 7rem;
+
     @include breakpoint($xl-bp) {
       height: 22.5rem;
       border-radius: 5rem;
     }
+
     @include breakpoint($sm-bp) {
       height: 29.3rem;
       border-radius: 7rem;
@@ -895,9 +810,11 @@ main {
   @include breakpoint($cos-bp) {
     padding-left: 3rem;
   }
+
   @include breakpoint($xl-bp) {
     padding-left: 2.2rem;
   }
+
   @include breakpoint($sm-bp) {
     padding-left: 4.5rem;
   }
@@ -953,11 +870,13 @@ main {
   line-height: 1.5rem;
   color: var(--green);
   margin-top: 1rem;
+
   @include breakpoint($xl-bp) {
     font-size: 1rem;
     line-height: 1.1rem;
     margin-top: 0.8rem;
   }
+
   @include breakpoint($sm-bp) {
     font-size: 1.4rem;
     line-height: 1.6rem;
@@ -977,6 +896,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
+
   img {
     width: 100%;
     height: 100%;
@@ -1016,7 +936,11 @@ main {
   }
 }
 
-.results-h3, .results-subtitle, .results-h3, .results-button, .results-list {
+.results-h3,
+.results-subtitle,
+.results-h3,
+.results-button,
+.results-list {
   position: relative;
 }
 
@@ -1046,11 +970,13 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 5.4rem;
+
   @include breakpoint($xl-bp) {
     width: 100%;
     padding-left: 3rem;
     padding-right: 3rem;
   }
+
   @include breakpoint($sm-bp) {
     grid-template-columns: repeat(1, 1fr);
     margin-top: 2.4rem;
@@ -1078,9 +1004,11 @@ main {
   width: 100%;
   border-radius: 2rem;
   overflow: hidden;
+
   @include breakpoint($xl-bp) {
     height: 37.8rem;
   }
+
   @include breakpoint($sm-bp) {
     height: 100%;
   }
@@ -1094,9 +1022,11 @@ main {
   &.--bot {
     height: 30.8rem;
     background-color: #009B97;
+
     @include breakpoint($xl-bp) {
       height: 32.8rem;
     }
+
     @include breakpoint($sm-bp) {
       height: 100%;
     }
@@ -1114,6 +1044,7 @@ main {
   line-height: 2.3rem;
 
   color: var(--green);
+
   @include breakpoint($sm-bp) {
     text-align: center;
     font-size: 1.4rem;
@@ -1132,6 +1063,7 @@ main {
 
 .results-button {
   margin-top: 5.5rem;
+
   @include breakpoint($sm-bp) {
     margin-top: 2.5rem;
     width: 100%;
@@ -1188,9 +1120,11 @@ main {
   @include breakpoint($cos-bp) {
     margin-right: 0;
   }
+
   @include breakpoint($xl-bp) {
     margin-top: 10.2rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 4.3rem;
   }
@@ -1232,15 +1166,18 @@ main {
   grid-template-columns: 22.6rem 9rem;
   justify-content: space-between;
   align-items: center;
+
   @include breakpoint($sm-bp) {
     grid-template-columns: 19rem 9rem;
     column-gap: 5.5rem;
   }
+
   div {
 
     @include breakpoint($sm-bp) {
       font-size: 1.6rem;
     }
+
     &:last-child {
       font-weight: 500;
       font-size: 2.2rem;
@@ -1288,9 +1225,11 @@ main {
   width: 100%;
   overflow: hidden;
   border-radius: 7rem;
+
   @include breakpoint($xl-bp) {
     height: 45rem;
   }
+
   @include breakpoint($sm-bp) {
     height: 19rem;
     border-radius: 4rem;
@@ -1367,7 +1306,9 @@ main {
     padding-right: 0.5rem;
     margin-top: 2.5rem;
   }
-  &::before, &::after {
+
+  &::before,
+  &::after {
     content: '';
     height: 200vh;
     width: 100%;
@@ -1376,9 +1317,11 @@ main {
     top: 0;
     z-index: 9;
   }
+
   &::before {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 1.48%);
     left: calc(100% + 1rem);
+
     @include breakpoint($sm-bp) {
       height: 100vh;
     }
@@ -1387,9 +1330,11 @@ main {
   &::after {
     background: linear-gradient(-90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 1.48%);
     right: 100%;
+
     @include breakpoint($xl-bp) {
       right: calc(100% + 1rem);
     }
+
     @include breakpoint($sm-bp) {
       height: 100vh;
     }
@@ -1420,9 +1365,11 @@ main {
   .swiper-pagination {
     position: static;
     margin-top: 6.7rem;
+
     @include breakpoint($xl-bp) {
       margin-top: 5rem;
     }
+
     @include breakpoint($sm-bp) {
       margin-top: 3.2rem;
     }
@@ -1461,9 +1408,11 @@ main {
 
 .reviews-button {
   margin-top: 7rem;
+
   @include breakpoint($xl-bp) {
     margin-top: 4rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-top: 2.8rem;
   }
@@ -1686,6 +1635,7 @@ textarea.page-input {
 
     }
   }
+
   a {
     color: #4CA096;
   }
@@ -1742,6 +1692,7 @@ textarea.page-input {
   background-color: transparent;
   padding: 0;
   opacity: 0.3;
+
   @include breakpoint($sm-bp) {
     top: 2rem;
     right: 2rem;
@@ -1815,13 +1766,16 @@ textarea.modal-textared {
     display: none;
   }
 }
+
 .tablet-hidden {
   @include breakpoint($xl-bp) {
     display: none;
   }
 }
+
 .desctop-hidden {
   display: none;
+
   @include breakpoint($sm-bp) {
     display: block;
   }

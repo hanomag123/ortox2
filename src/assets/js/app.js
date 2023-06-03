@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Menu(menu, menuButton, header);
   }
 
-  const swipers = document.querySelectorAll('.actions__swiper');
+  const swipers = document.querySelectorAll('.sertificates__swiper');
   if (swipers.length) {
     swipers.forEach(el => {
       new Swiper(el, {
@@ -99,13 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         navigation: {
           nextEl: el.parentElement.querySelector('.next'),
           prevEl: el.parentElement.querySelector('.prev'),
-        },
-        pagination: {
-          el: el.parentElement.querySelector('.swiper-pagination'),
-          clickable: true,
-          renderBullet: function (index, className) {
-            return `<span class="actions-bullet swiper-pagination-bullet"></span>`;
-          },
         },
       })
     })
@@ -146,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const swipers3 = document.querySelectorAll('.reviews__swiper');
   if (swipers3.length) {
     swipers3.forEach(el => {
-      const swiper = new Swiper(el, {
+        new Swiper(el, {
         loop: true,
         speed: 400,
         slidesPerView: 'auto',
@@ -188,6 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
   }
+
+
+
   const buttons = document.querySelectorAll('.reviews__swiper .swiper-slide');
 
   function removeHover() {
