@@ -1,0 +1,236 @@
+.casePage {
+    padding-left: 56.3rem;
+    padding-right: 56.3rem;
+    margin-top: 9rem;
+
+    @include breakpoint($cos-bp) {
+        padding-left: 15rem;
+        padding-right: 15rem;
+    }
+
+    @include breakpoint($xl-bp) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        margin-top: 5rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-top: 3rem;
+    }
+
+
+    .casePage-date {
+        display: flex;
+        gap: 1.3rem;
+        align-items: center;
+
+        .casePage-date__imgContainer {
+            width: 4%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 150%;
+            color: #313131;
+        }
+    }
+
+    .casePage-cure {
+        margin-top: 10rem;
+
+        @include breakpoint($sm-bp) {
+            margin-top: 3rem;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 4rem;
+            line-height: 120%;
+            color: #313131;
+
+            @include breakpoint($sm-bp) {
+                font-size: 3rem;
+            }
+        }
+
+        .casePage-cure__container {
+
+            .casePage-cure__imgContainer {
+                width: 100%;
+                border-radius: 1rem;
+                overflow: hidden;
+                margin-top: 2rem;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            ul {
+                margin-top: 5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 2rem;
+                    gap: 1rem;
+                }
+
+                li {
+                    font-weight: 400;
+                    font-size: 1.6rem;
+                    line-height: 150%;
+                    color: #313131;
+                    position: relative;
+                    margin-left: 1rem;
+                    display: flex;
+                    align-items: center;
+
+                    
+                    
+                    &::before {
+                        content: '';
+                        width: 0.6rem;
+                        height: 0.6rem;
+                        position: absolute;
+                        background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
+                        border-radius: 50%;
+                        left: -1.5%;
+
+                        @include breakpoint($sm-bp) {
+                            left: -3.5%;
+                        }
+                    }
+                }
+
+                .casePage-cure__inListContainer {
+                    display: flex;
+                    flex-direction: column;
+
+                    &::before {
+                        top: 4%;
+                    }
+
+                    .casePage-cure__inList {
+                        margin-top: 2rem;
+
+                        li {
+                            &::before {
+                                content: '';
+                                width: 0.4rem;
+                                height: 0.4rem;
+                                position: absolute;
+                                background: #313131;
+                                border-radius: 50%;
+                                left: -1.5%;
+
+                                @include breakpoint($sm-bp) {
+                                    left: -2.5%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .casePage-cure__videoList {
+                li {
+                    margin-left: 0rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+
+                    &::before {
+                        display: none;
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 1.6rem;
+                        line-height: 150%;
+                        color: #313131;
+                    }
+
+                    .casePage-cure__videoContainer {
+                        position: relative;
+
+                        &::before {
+                            content: "▶";
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            font-size: 20rem;
+                            color: #ffff;
+                            z-index: 1;
+                        }
+                    }
+                    
+                    video {
+                        position: relative;
+
+                        // .casePage-cure__triangle {
+                        //     position: absolute;
+                        //     top: 0rem;
+                        //     left: 0rem;
+                        //     z-index: 1111;
+                        // }
+
+                        
+                    }
+                }
+            }
+
+            .casePage-cure__title {
+                margin-top: 5rem;
+                font-weight: 600;
+                font-size: 2rem;
+                line-height: 120%;
+                color: #313131;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 2rem;
+                    font-size: 1.8rem;
+                }
+            }
+
+            .casePage-cure__text {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                margin-top: 5rem;
+
+                p {
+                    font-weight: 400;
+                    font-size: 1.6rem;
+                    line-height: 150%;
+                    color: #313131;
+                }
+
+                
+            }
+        }
+    }
+
+    .first {
+        margin-top: 2rem;
+    }
+
+    
+}
+
+.casePage-cure__videoContainer.clicked::before {
+    display: none;
+  }

@@ -471,6 +471,20 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  let videoItems = document.querySelectorAll('.casePage-cure__videoContainer')
+
+  videoItems.forEach(e => {
+    const video = e.querySelector('video');
+    video.addEventListener('click', () => {
+      video.setAttribute('controls', 'true');
+      e.classList.add('clicked');
+    });
+  
+    video.addEventListener('ended', () => {
+      e.classList.remove('clicked');
+    });
+  });
+
 });
 
 
