@@ -12,6 +12,11 @@
 .cases-item {
   line-height: 1.5;
   font-size: 1.6rem;
+  &:hover {
+    .cases-title {
+      color: var(--green);
+    }
+  }
   a {
     display: flex;
     flex-direction: column;
@@ -32,7 +37,9 @@
 
 .cases-title {
   font-size: 2.2rem;
-  color: var(--green);
+  color: #006666;
+  transition: color .3s;
+  font-weight: 500;
   @include breakpoint($sm-bp) {
     font-size: 2rem;
   }

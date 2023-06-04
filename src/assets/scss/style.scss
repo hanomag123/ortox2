@@ -20,6 +20,9 @@
 	width: 0;
 	background-color: transparent;
 }
+::-webkit-scrollbar:horizontal {
+  height: 0;
+}
 
 ::-webkit-scrollbar-thumb
 {
