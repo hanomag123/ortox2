@@ -10,6 +10,11 @@
 }
 
 .specialists-item {
+  &:hover {
+    .specialists-block-name {
+      color: var(--green);
+    }
+  }
   a {
     display: grid;
     grid-template-columns: 24rem 1fr;
@@ -21,7 +26,7 @@
   }
 }
 
-.specialists-img {
+.specialists-block-img {
   border-radius: 1rem;
   height: 24rem;
   width: 100%;
@@ -44,4 +49,5 @@
   font-size: 2rem;
   line-height: 120%;
   color: #006666;
+  transition: color .3s;
 }

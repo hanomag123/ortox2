@@ -243,3 +243,10 @@ table {
   overflow: hidden;
   position: relative;
 }
+
+.price-block {
+  @include breakpoint($sm-bp) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
