@@ -475,10 +475,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   videoItems.forEach(e => {
     const video = e.querySelector('video');
-    video.addEventListener('click', () => {
+    const triangle = e.querySelector('.triangle');
+  
+    const playVideo = () => {
       video.setAttribute('controls', 'true');
+      video.play();
+      triangle.remove();
       e.classList.add('clicked');
-    });
+    };
+  
+    triangle.addEventListener('click', playVideo);
+  
+    video.addEventListener('click', playVideo);
   
     video.addEventListener('ended', () => {
       e.classList.remove('clicked');

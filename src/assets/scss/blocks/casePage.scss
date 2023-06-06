@@ -145,6 +145,33 @@
                 }
             }
 
+            .withoutDott {
+                li {
+                    margin-left: 0rem;
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+            iframe {
+                margin-top: 2rem;
+                width: 100%;
+                height: 40rem;
+
+                @include breakpoint($cos-bp) {
+                    height: 60rem;
+                }
+
+                @include breakpoint($xl-bp) {
+                    height: 50rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    height: 30rem;
+                }
+            }
+
             .casePage-cure__videoList {
                 li {
                     margin-left: 0rem;
@@ -166,8 +193,8 @@
                     .casePage-cure__videoContainer {
                         position: relative;
 
-                        &::before {
-                            content: "▶";
+
+                        .triangle {
                             position: absolute;
                             top: 50%;
                             left: 50%;
@@ -175,6 +202,7 @@
                             font-size: 20rem;
                             color: #ffff;
                             z-index: 1;
+                            cursor: pointer;
                         }
                     }
                     
@@ -206,6 +234,13 @@
                 }
             }
 
+            .casePage-cure__standartText {
+                font-weight: 400;
+                font-size: 1.6rem;
+                line-height: 150%;
+                color: #313131;
+            }
+
             .casePage-cure__text {
                 display: flex;
                 flex-direction: column;
@@ -234,3 +269,5 @@
 .casePage-cure__videoContainer.clicked::before {
     display: none;
   }
+
+ 
