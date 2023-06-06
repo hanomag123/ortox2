@@ -91,8 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const swipers = document.querySelectorAll('.sertificates__swiper');
   if (swipers.length) {
     swipers.forEach(el => {
+      const numberOfSlides = el.querySelector('.swiper-slide');
+
       new Swiper(el, {
-        loop: true,
+        loop: numberOfSlides > 3,
         speed: 400,
         slidesPerView: 'auto',
         spaceBetween: 0,
