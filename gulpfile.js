@@ -69,7 +69,7 @@ function serve() {
 
 function html(cb) {
   panini.refresh();
-  return src(path.src.html, { base: srcPath })
+  return src([path.src.html,'src/static/**/*.html'], { base: srcPath })
     .pipe(plumber())
     .pipe(
       panini({
@@ -80,6 +80,17 @@ function html(cb) {
         data: srcPath + "data/",
       })
     )
+    .pipe(rename(function (path) {
+      // Returns a completely new object, make sure you return all keys needed!
+      if (path.dirname.split('\\')[0] === 'static') {
+        return {
+          dirname: path.dirname.replace('static', ''),
+          basename: path.basename,
+          extname: path.extname,
+        };
+      }
+
+    }))
     .pipe(fileInclude())
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
@@ -269,7 +280,7 @@ function cleanWithoutImg(cb) {
 }
 
 function watchFiles() {
-  gulp.watch([path.watch.html], gulp.series(html, cssWatch));
+  gulp.watch([path.watch.html, 'src/static/**/*.html'], gulp.series(html, cssWatch));
   // gulp.watch([path.watch.pug], pugs)
   // gulp.watch([path.watch.css], vendorcss);
   gulp.watch([path.watch.css], cssWatch);
