@@ -6416,6 +6416,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .page-text p {
   margin-bottom: 3rem;
 }
+.page-text h2,
 .page-text h3 {
   margin-top: 4rem;
   margin-bottom: 2rem;
@@ -6425,11 +6426,13 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   color: #000000;
 }
 @media (max-width: 500px) {
+  .page-text h2,
   .page-text h3 {
     font-size: 1.7rem;
     line-height: 2rem;
   }
 }
+.page-text ol,
 .page-text ul,
 .page-text p {
   font-family: "Montserrat";
@@ -6440,11 +6443,33 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   color: #000000;
 }
 @media (max-width: 500px) {
+  .page-text ol,
   .page-text ul,
   .page-text p {
     font-size: 1.4rem;
     line-height: 2.3rem;
   }
+}
+.page-text ol {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  counter-reset: num;
+}
+.page-text ol li {
+  padding-left: 3rem;
+  position: relative;
+  counter-increment: num;
+}
+.page-text ol li::before {
+  content: counter(num);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: inline-block;
+  position: absolute;
+  left: 0;
 }
 .page-text ul {
   margin-top: 2rem;
