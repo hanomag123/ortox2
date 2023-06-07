@@ -397,6 +397,7 @@
           line-height: 2rem;
           color: #003837;
           a {
+            display: block;
             &:hover {
               color: var(--green);
             }

@@ -4535,6 +4535,9 @@ textarea.modal-textared {
   line-height: 2rem;
   color: #003837;
 }
+.services-price .services-price__contentContainer .services-price__item ul li a {
+  display: block;
+}
 .services-price .services-price__contentContainer .services-price__item ul li a:hover {
   color: var(--green);
 }
