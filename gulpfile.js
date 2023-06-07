@@ -67,6 +67,14 @@ function serve() {
   });
 }
 
+function php(cb) {
+  return src('src/**/*.php', { base: srcPath })
+    .pipe(dest(path.build.html))
+    .pipe(browserSync.reload({ stream: true }));
+
+  cb();
+}
+
 function html(cb) {
   panini.refresh();
   return src([path.src.html,'src/static/**/*.html'], { base: srcPath })
@@ -281,6 +289,7 @@ function cleanWithoutImg(cb) {
 
 function watchFiles() {
   gulp.watch([path.watch.html, 'src/static/**/*.html'], gulp.series(html, cssWatch));
+  gulp.watch(['src/*.php'], gulp.series(php));
   // gulp.watch([path.watch.pug], pugs)
   // gulp.watch([path.watch.css], vendorcss);
   gulp.watch([path.watch.css], cssWatch);
@@ -292,7 +301,7 @@ function watchFiles() {
 }
 
 const buildOld = gulp.series(clean, gulp.parallel(html, css, vendorcss, js, images, fonts));
-const start = gulp.series(cleanWithoutImg, gulp.parallel(html, css, js, fonts));
+const start = gulp.series(cleanWithoutImg, gulp.parallel(html,php, css, js, fonts));
 const watch = gulp.parallel(start, watchFiles, serve);
 const build = gulp.parallel(buildOld, watchFiles, serve);
 const buildCleanCSS = gulp.series(clean, gulp.parallel(html, cleanCss, js, images, fonts));
