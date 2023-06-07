@@ -513,6 +513,20 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   } 
 
+  const showMoreButton = document.querySelector('#showMoreButton')
+
+  if (showMoreButton) {
+    showMoreButton.addEventListener('click', function () {
+      const resultsItem = document.querySelectorAll('.result-item[hidden]');
+      if (resultsItem.length) {
+        resultsItem.forEach(el => {
+          el.hidden = false;
+        })
+      }
+      this.hidden = true;
+    })
+  }
+
   const priceButtons = document.querySelectorAll('.price-button');
 
   if (priceButtons.length) {
