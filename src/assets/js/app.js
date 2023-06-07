@@ -409,6 +409,22 @@ document.addEventListener("DOMContentLoaded", () => {
         sl = s.length;
         h = this.parentNode.previousSibling;
         sel = this.parentNode.previousSibling.classList.add('select-selected--active')
+        if (this.closest('#diognosisSelect')) {
+          const diognosis = document.querySelectorAll("[data-diognosis]");
+
+          if (diognosis.length) {
+            diognosis.forEach(el => {
+              const diognos = el.dataset.diognosis;
+
+              if (diognos.trim() === this.innerHTML.trim()) {
+                el.classList.remove('diognos-hidden');
+              } else {
+                el.classList.add('diognos-hidden');
+              }
+            })
+          }
+          
+        }
         for (i = 0; i < sl; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
@@ -462,6 +478,40 @@ document.addEventListener("DOMContentLoaded", () => {
   /* If the user clicks anywhere outside the select box,
   then close all select boxes: */
   document.addEventListener("click", closeAllSelect);
+
+  const radioAges = document.querySelectorAll('.radioAge');
+
+  if (radioAges.length) {
+    radioAges.forEach(el => {
+      el.addEventListener('click', function () {
+        const value = this.value;
+        const number = value.replace(/^\D+/g, ''); 
+        const ages = document.querySelectorAll("[data-age]");
+        if (!number || !ages.length || !value) {
+          return;
+        }
+        if (value.indexOf('>') !== -1) {
+          
+          ages.forEach(ageItem => {
+            if (ageItem.dataset.age < number) {
+              ageItem.classList.add('ageItem-hidden')
+            } else {
+              ageItem.classList.remove('ageItem-hidden')
+            }
+          })
+
+        } else {
+          ages.forEach(ageItem => {
+            if (ageItem.dataset.age > number) {
+              ageItem.classList.add('ageItem-hidden')
+            } else {
+              ageItem.classList.remove('ageItem-hidden')
+            }
+          })
+        }
+      })
+    })
+  } 
 
   const priceButtons = document.querySelectorAll('.price-button');
 

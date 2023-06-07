@@ -51,12 +51,12 @@ html {
 *:after {
   box-sizing: inherit;
   font-family: 'Montserrat';
-  font-style: normal;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
   color: var(--black);
+  font-style: normal;
 }
 
 .bg-grey {
