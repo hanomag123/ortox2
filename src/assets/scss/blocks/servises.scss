@@ -396,6 +396,11 @@
           font-size: 1.5rem;
           line-height: 2rem;
           color: #003837;
+          a {
+            &:hover {
+              color: var(--green);
+            }
+          }
         }
       }
 
@@ -454,6 +459,37 @@
           }
         }
       }
+    }
+  }
+}
+
+.search-page {
+  .services-price {
+    max-width: 150rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-price-search {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    margin-top: 3rem;
+    padding-bottom: 2.2rem;
+  }
+
+  p {
+    margin-bottom: 2.2rem;
+    font-size: 1.6rem;
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: rgba(0, 155, 151, 0.5);
+    &:hover {
+      color: var(--green);
     }
   }
 }
