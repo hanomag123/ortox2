@@ -20,7 +20,7 @@
     @include breakpoint($sm-bp) {
         margin-top: 4rem;
     }
-     
+
     .servicesSecond-content {
         display: flex;
         flex-direction: column;
@@ -36,7 +36,72 @@
             flex-direction: column;
             gap: 3rem;
 
+            h2,
+            h3 {
+                margin-top: 4rem;
+                margin-bottom: 2rem;
+                font-weight: 500;
+                font-size: 2.3rem;
+                line-height: 2.9rem;
+                color: #000000;
 
+                @include breakpoint($sm-bp) {
+                    font-size: 1.7rem;
+                    line-height: 2rem;
+                }
+
+            }
+
+            ol {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                counter-reset: num;
+
+                li {
+                    padding-left: 3rem;
+                    position: relative;
+                    counter-increment: num;
+                    width: 100%;
+
+                    &::before {
+                        content: counter(num);
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+            }
+
+            ul {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+
+                li {
+                    padding-left: 3rem;
+                    position: relative;
+                    width: 100%;
+
+                    &::before {
+                        content: "•";
+                        margin-left: 1rem;
+                        margin-right: 1rem;
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+            }
+
+            ul,
+            ol,
             p {
                 font-family: 'Montserrat';
                 font-style: normal;
@@ -66,9 +131,9 @@
                 @include breakpoint($sm-bp) {
                     width: 100%;
                 }
-                
+
             }
-            
+
             a {
                 padding: 2rem 3rem;
                 background: rgba(255, 255, 255, 0.63);
