@@ -6354,20 +6354,22 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   flex-wrap: wrap;
   gap: 2.4rem;
 }
-.servicesSecond .servicesSecond-content ul a {
+.servicesSecond .servicesSecond-content ul li {
+  display: block;
   width: 48%;
 }
 @media (max-width: 500px) {
-  .servicesSecond .servicesSecond-content ul a {
+  .servicesSecond .servicesSecond-content ul li {
     width: 100%;
   }
 }
-.servicesSecond .servicesSecond-content ul li {
+.servicesSecond .servicesSecond-content ul a {
   padding: 2rem 3rem;
   background: rgba(255, 255, 255, 0.63);
   border: 0.1rem solid #F1F1F1;
   backdrop-filter: blur(0.46);
   border-radius: 1rem;
+  display: block;
   width: 100%;
   height: 100%;
   font-family: "Montserrat";
@@ -6379,11 +6381,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   transition: all 0.25s;
 }
 @media (max-width: 1024px) {
-  .servicesSecond .servicesSecond-content ul li {
+  .servicesSecond .servicesSecond-content ul a {
     text-align: center;
   }
 }
-.servicesSecond .servicesSecond-content ul li:hover {
+.servicesSecond .servicesSecond-content ul a:hover {
   background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
   border: 0.1rem solid #F1F1F1;
   color: #CFFFFE;
