@@ -89,7 +89,6 @@ for (const form of document.forms) {
     if (parent) {
       modalHandler.apply(parent);
     } else {
-      return
     }
 
     if (feedback) {
