@@ -353,7 +353,17 @@ document.addEventListener("DOMContentLoaded", () => {
     window.onscroll = function () { };
   }
 
+  const buttonsMenu = document.querySelectorAll('.menu__bot-button, .services-price__item');
 
+
+
+  if (buttonsMenu.length) {
+    buttonsMenu.forEach(el => el.addEventListener('click', () => {
+      if (xl.matches) { 
+        event.preventDefault();
+      }
+    }))
+  } 
 
   const menuButtons = document.querySelectorAll('.menu__bot-list > li, .services-price__item');
 
