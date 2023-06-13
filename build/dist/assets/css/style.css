@@ -4408,12 +4408,6 @@ textarea.modal-textared {
     width: 100%;
   }
 }
-.services-price .services-price__contentContainer .services-price__item > a .services-price__arrow {
-  display: none;
-}
-.services-price .services-price__contentContainer .services-price__item > a + ul {
-  display: none;
-}
 .services-price .services-price__contentContainer .services-price__item > a,
 .services-price .services-price__contentContainer .services-price__item button {
   padding: 0rem;
@@ -4554,6 +4548,39 @@ textarea.modal-textared {
 }
 .services-price .services-price__contentContainer .services-price__item:hover .services-price__img {
   fill: var(--white);
+}
+@media (hover: hover) and (pointer: fine) {
+  .services-price .services-price__contentContainer .services-price__item:hover .services-price__img {
+    fill: #FFFFFF;
+    transition: all 0.3s;
+  }
+  .services-price .services-price__contentContainer .services-price__item:hover .services-price__arrow {
+    transform: rotate(180deg);
+    stroke: #CFFFFE;
+    transition: all 0.3s;
+  }
+  .services-price .services-price__contentContainer .services-price__item:hover .services-price__btnTitle {
+    color: #CFFFFE;
+  }
+  .services-price .services-price__contentContainer .services-price__item:hover > a,
+  .services-price .services-price__contentContainer .services-price__item:hover button {
+    background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
+  }
+  .services-price .services-price__contentContainer .services-price__item:hover button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .services-price .services-price__contentContainer .services-price__item:hover ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+}
+@media (hover: hover) and (pointer: fine) and (max-width: 500px) {
+  .services-price .services-price__contentContainer .services-price__item:hover ul {
+    display: flex;
+  }
 }
 .services-price .services-price__contentContainer .services-price__item.open .services-price__img {
   fill: #FFFFFF;

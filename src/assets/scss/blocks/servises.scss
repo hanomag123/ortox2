@@ -1,5 +1,6 @@
 .mt-40 {
   margin-top: 3.3rem;
+
   @include breakpoint($xl-bp) {
     margin-top: 2.3rem;
   }
@@ -7,6 +8,7 @@
 
 .mt-150 {
   margin-top: 14.5rem;
+
   @include breakpoint($xl-bp) {
     margin-top: 9.5rem;
   }
@@ -15,25 +17,31 @@
 .breadcrumps {
   position: relative;
   z-index: 1;
+
   li {
     margin-right: 1rem;
     display: inline;
+
     @include breakpoint($sm-bp) {
       margin-right: 0.5rem;
     }
+
     &:last-child {
       margin-left: 0;
     }
+
     &::after {
       content: ' / ';
       margin-left: 0.5rem;
     }
+
     &:last-child {
       &::after {
         content: unset;
       }
     }
   }
+
   a,
   span {
     font-style: normal;
@@ -42,6 +50,7 @@
     line-height: 2.6rem;
     color: rgba(0, 56, 55, 0.5);
     font-family: 'Open Sans';
+
     @include breakpoint($sm-bp) {
       font-size: 1.2rem;
       line-height: 2rem;
@@ -54,18 +63,18 @@
   grid-template-columns: 44.5% 1fr;
   align-items: center;
   width: 100%;
+
   @include breakpoint($cos-bp) {
     grid-template-columns: 45.5% 1fr;
   }
+
   @include breakpoint($xl-bp) {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
   }
 
-  @include breakpoint($sm-bp) {
-    
-  }
+  @include breakpoint($sm-bp) {}
 
   .services-header-left {
     display: flex;
@@ -74,17 +83,21 @@
     gap: 4rem;
     background-color: #F7F7F7;
     height: 100%;
+
     @include breakpoint($xl-bp) {
       padding-top: 6.5rem;
       padding-bottom: 6.5rem;
       width: 100%;
     }
+
     @include breakpoint($sm-bp) {
       padding-top: 3rem;
       padding-bottom: 5rem;
     }
+
     .services-header-block {
       padding-left: 19.5rem;
+
       @include breakpoint($cos-bp) {
         padding-left: 5.6rem;
       }
@@ -121,11 +134,13 @@
         line-height: 7rem;
         color: #4F4F4F;
         margin-top: 2rem;
+
         @include breakpoint($cos-bp) {
           font-size: 6rem;
           line-height: 6.5rem;
           margin-top: 1rem;
         }
+
         @include breakpoint($xl-bp) {
           margin-top: 1.3rem;
           font-size: 7rem;
@@ -155,9 +170,11 @@
 
   .services-header-right {
     height: 84rem;
+
     @include breakpoint($xl-bp) {
       width: 100%;
     }
+
     @include breakpoint($sm-bp) {
       height: 37.1rem;
     }
@@ -175,13 +192,16 @@
   border-radius: 1rem;
   letter-spacing: -0.03em;
   background-color: transparent;
+
   @include breakpoint($cos-bp) {
     margin-top: 2rem;
     margin-left: 0.5rem;
   }
+
   @include breakpoint($xl-bp) {
     margin-top: 3rem;
   }
+
   @include breakpoint($sm-bp) {
     margin-left: 0;
     margin-top: 1.5rem;
@@ -197,6 +217,7 @@
     font-size: 2.2rem;
   }
 }
+
 .services-price {
   display: flex;
   flex-direction: column;
@@ -234,30 +255,36 @@
       width: 100%;
       box-sizing: border-box;
       outline: none;
+
       @include breakpoint($sm-bp) {
         font-size: 1.5rem;
         padding-top: 1.3rem;
         padding-bottom: 1.3rem;
       }
+
       &:focus {
         border-color: var(--green);
       }
     }
+
     button {
       position: absolute;
       top: 55%;
       right: 2.3rem;
       transform: translate(0%, -50%);
+
       @include breakpoint($sm-bp) {
         top: 57%;
         right: 2rem;
       }
+
       &:hover {
         svg {
           fill: var(--green);
         }
       }
     }
+
     svg {
       width: 2.2rem;
       height: 2.2rem;
@@ -271,11 +298,13 @@
     flex-wrap: wrap;
     gap: 2.7rem;
     justify-content: center;
+
     @include breakpoint($xl-bp) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.4rem;
     }
+
     @include breakpoint($sm-bp) {
       margin-top: 2rem;
       grid-template-columns: repeat(1, 1fr);
@@ -292,15 +321,10 @@
       @include breakpoint($xl-bp) {
         width: 100%;
       }
-      & > a {
-        .services-price__arrow {
-          display: none;
-        }
-        & + ul {
-          display: none;
-        }
-      }
-      & > a,
+
+      &>a {}
+
+      &>a,
       button {
         padding: 0rem;
         background: rgba(251, 251, 251, 0.63);
@@ -315,15 +339,18 @@
         width: 100%;
         padding-left: 4.5rem;
         transition: all 0.3s;
+
         @include breakpoint($cos-bp) {
           padding-left: 4rem;
           min-height: 10.8rem;
         }
+
         @include breakpoint($sm-bp) {
           border-radius: 1rem;
           padding-left: 5.5rem;
           gap: 2rem;
         }
+
         .services-price__img {
           width: 5.2rem;
           height: 5.2rem;
@@ -331,9 +358,11 @@
           fill: #009B97;
           transition: all .25s;
           flex: 0 0 auto;
+
           @include breakpoint($xl-bp) {
             width: 4.7rem;
           }
+
           @include breakpoint($sm-bp) {
             width: 6.2rem;
             height: 6.2rem;
@@ -348,12 +377,15 @@
           line-height: 2.3rem;
           color: #003837;
           transition: color .3s;
+
           @include breakpoint($cos-bp) {
             letter-spacing: -0.04em;
           }
+
           @include breakpoint($xl-bp) {
             font-size: 1.4rem;
           }
+
           @include breakpoint($sm-bp) {
             font-size: 1.5rem;
             letter-spacing: 0;
@@ -385,10 +417,12 @@
         gap: 2rem;
         top: 100%;
         z-index: 11;
+
         @include breakpoint($sm-bp) {
           display: none;
           position: static;
         }
+
         li {
           font-family: 'Montserrat';
           font-style: normal;
@@ -396,8 +430,10 @@
           font-size: 1.5rem;
           line-height: 2rem;
           color: #003837;
+
           a {
             display: block;
+
             &:hover {
               color: var(--green);
             }
@@ -406,19 +442,66 @@
       }
 
       &:hover {
-        & > a,
+
+        &>a,
         button {
           background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
           color: var(--white);
         }
+
         .services-price__btnTitle {
           color: var(--white);
         }
+
         .services-price__arrow {
           stroke: var(--white);
         }
+
         .services-price__img {
           fill: var(--white);
+        }
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+
+          .services-price__img {
+            fill: #FFFFFF;
+            transition: all .3s;
+          }
+
+
+
+          .services-price__arrow {
+            transform: rotate(180deg);
+            stroke: #CFFFFE;
+            transition: all .3s;
+          }
+
+          .services-price__btnTitle {
+            color: #CFFFFE;
+          }
+
+          &>a,
+          button {
+            background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
+          }
+
+          button {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translate3d(0, 0, 0);
+            transition: .35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+
+            @include breakpoint($sm-bp) {
+              display: flex;
+            }
+          }
         }
       }
 
@@ -440,7 +523,8 @@
         .services-price__btnTitle {
           color: #CFFFFE;
         }
-        & > a,
+
+        &>a,
         button {
           background: linear-gradient(180deg, #00B7B2 0%, #009B97 100%);
         }
@@ -455,6 +539,7 @@
           visibility: visible;
           transform: translate3d(0, 0, 0);
           transition: .35s all cubic-bezier(0.65, 0.05, 0.36, 1);
+
           @include breakpoint($sm-bp) {
             display: flex;
           }
@@ -470,6 +555,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .services-price-search {
     width: 100%;
   }
@@ -489,6 +575,7 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: rgba(0, 155, 151, 0.5);
+
     &:hover {
       color: var(--green);
     }
